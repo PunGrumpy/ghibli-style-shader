@@ -2,9 +2,7 @@ FROM node:19
 
 USER website
 
-RUN mkdir -p /home/website
-
-WORKDIR /home/website
+WORKDIR /app
 
 RUN npm install -g pnpm
 
