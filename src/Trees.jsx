@@ -1,5 +1,5 @@
 import { forwardRef, useMemo } from 'react'
-import { useGLTF } from '@react-three/drei'
+import { useGLTF, SoftShadows } from '@react-three/drei'
 import { Vector3 } from 'three'
 import { GhibliShader } from './GhibliShader'
 
@@ -31,6 +31,13 @@ export const Trees = forwardRef((props, ref) => {
           attach="material"
           {...GhibliShader}
           uniforms={uniforms}
+        />
+        <SoftShadows
+          frustum={3.75}
+          size={0.005}
+          near={9.5}
+          samples={17}
+          rings={11}
         />
       </mesh>
     </group>
