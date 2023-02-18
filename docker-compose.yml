@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: node:19
+    image: ghibli-style-shader
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,7 +9,7 @@ services:
       - .:/home/node/app
     working_dir: /home/node/app
     expose:
-      - '80'
+      - '3000'
     ports:
-      - '80:3000'
+      - '3000:3000'
     command: pnpm start
