@@ -2,7 +2,7 @@ FROM node:19
 
 USER website
 
-RUN /home/website
+RUN mkdir -p /home/website
 
 WORKDIR /home/website
 
