@@ -17,7 +17,7 @@ WORKDIR /home/node/app
 
 COPY --from=dependencies /home/node/app/node_modules ./node_modules
 
-RUN npm build
+RUN pnpm build
 
 FROM nginx:1.21-alpine AS production
 
