@@ -1,4 +1,4 @@
-FROM node:19
+FROM node:19-alpine as builder
 
 WORKDIR /app
 
@@ -6,7 +6,7 @@ RUN npm install
 
 RUN npm build
 
-FROM nginx:1.21-alpine
+FROM nginx:1.21-alpine as production
 
 COPY --from=builder /home/website/build /var/www/pungrumpy/html
 
