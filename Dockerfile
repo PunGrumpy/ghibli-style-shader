@@ -1,8 +1,16 @@
 FROM node:19
 
+RUN apt-get update && apt-get install -y \
+    apt-get install sudo && \
+    useradd -m website && \
+    echo "website:website" | chpasswd && \
+    adduser website sudo && \
+    mkdir /home/website && \
+    chown -R website:website /home/website
+
 USER website
 
-WORKDIR /app
+WORKDIR /home/website
 
 RUN npm install -g pnpm
 
