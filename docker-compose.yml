@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: ghibli-style-shader
+    container_name: ghibli-style-shader
     build:
       context: .
       dockerfile: Dockerfile

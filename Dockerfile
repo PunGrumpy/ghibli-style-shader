@@ -1,4 +1,4 @@
-FROM node:19 AS dependencies
+FROM node:19 AS builder
 
 WORKDIR /home/node/app
 
@@ -10,15 +10,5 @@ RUN \
   elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm i --frozen-lockfile; \
   else echo "Lockfile not found." && exit 1; \
   fi
-
-FROM node:19 AS runner
-
-WORKDIR /home/node/app
-
-COPY --from=dependencies /home/node/app/node_modules ./node_modules
-
-COPY . .
-
-RUN yarn global add pnpm
 
 CMD ["pnpm", "start"]
