@@ -19,4 +19,6 @@ COPY --from=dependencies /home/node/app/node_modules ./node_modules
 
 COPY . .
 
-RUN yarn global add pnpm && pnpm run start
+RUN yarn global add pnpm
+
+CMD ["pnpm", "start"]
