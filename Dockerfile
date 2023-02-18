@@ -19,7 +19,7 @@ COPY --from=dependencies /home/node/app/node_modules ./node_modules
 
 COPY . .
 
-RUN pnpm run build
+RUN npm run build
 
 FROM nginx:1.21-alpine AS production
 
