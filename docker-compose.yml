@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    image: node:19
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/home/node/app
+    working_dir: /home/node/app
+    expose:
+      - '80'
+    ports:
+      - '80:3000'
+    command: pnpm start
