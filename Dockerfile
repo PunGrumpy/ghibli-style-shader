@@ -1,9 +1,6 @@
 FROM node:19
 
-
-RUN mkdir -p /home/website
-
-WORKDIR /home/website
+WORKDIR /app
 
 RUN npm install
 
