@@ -11,7 +11,7 @@ export const GhibliShader = {
       ]
     },
     brightnessThresholds: {
-      value: [0.9, 0.45, 0.001]
+      value: [1.0, 0.5, 0.0001]
     },
     lightPosition: { value: new Vector3(15, 15, 15) }
   },
